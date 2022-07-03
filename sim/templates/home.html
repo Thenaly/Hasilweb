@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block konten%}
+
+<div class="jumbotron">
+    <h1 class="display-4">Hola Amigos</h1>
+    <p class="lead">Wellcome to my first website and I hope you enjoy it.</p>
+    <hr class="my-4">
+    <p>Silahkan klik tombol dibawah ini dan Daftarkan diri anda untuk masuk kedalam website saya :)</p>
+    {% if current_user.is_authenticated %}
+
+    {% else %}
+    <a class="btn btn-primary btn-lg" href="{{url_for('rmahasiswa.data_mahasiswa')}}" role="button">Daftar Sekarang</a>
+    {% endif %}
+</div>
+{% endblock %}
